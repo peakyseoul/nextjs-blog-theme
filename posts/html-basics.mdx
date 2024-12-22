@@ -1,1 +1,154 @@
 
+---
+type: Post
+title: Basics of HTML
+description: >-
+  What is an HTML and how is it made? What are the most important tags to know? How to style html pages.
+date: '2024-12-22'
+---
+
+# What is an HTML?
+
+HTML stands for Hypertext Markup Langauge. 
+Hypertext - text displayed on a computer that has links to other hypertext documents.
+Markup Language - let's you annotate text to define how it should be displayed. 
+
+## HTML Tags
+
+HTML is made up of tags markup the text of a document in order to tell the browser how it should be displayed.
+
+* Enclosed in angle brackets: <h1>
+* Not displayed on the resulting web page
+* Inform the browser about how certain elements should be displayed.
+
+## HTML Structure
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your Page Title</title>
+    </head>
+
+    <body>
+        <!--This is where you will be writing your sigma code-->
+    </body>
+</html>
+
+```
+
+The **<head>** tag contains information about your website or *metadata*. This where title, language or time-zone is indicated.
+The **<body>** tag contains everthing that will be displayed to the user.
+
+### Tags can go inside other tags
+### We use indenting to show the structure of the tags
+### The structure of an html document is a tree
+### Typically, tags come in pairs - openning and closing tags.
+
+***
+
+## Basic Tags:
+
+<h1> - Heading one tag. typically used to indicate headings in the page.
+<p>  - Paragraph tag. These used to include a paragraph of a text. Note that there is an automatic line break (new line) after these tags.
+<i>  - Italized text. These make the text *cursive*.
+<b>  - These help to make the text **bold**.
+
+
+
+# h1 Heading
+
+## h2 Heading
+
+### h3 Heading
+
+#### h4 Heading
+
+##### h5 Heading
+
+###### h6 Heading
+
+## Horizontal Rules
+
+***
+
+## Emphasis
+
+**This is bold text**
+
+**This is bold text**
+
+*This is italic text*
+
+*This is italic text*
+
+~~Strikethrough~~
+
+## Blockquotes
+
+> Blockquotes can also be nested...
+>
+> > ...by using additional greater-than signs right next to each other...
+> >
+> > > ...or with spaces between arrows.
+
+## Lists
+
+Unordered
+
+*   Lorem ipsum dolor sit amet
+*   Consectetur adipiscing elit
+*   Integer molestie lorem at massa
+
+Ordered
+
+1.  Lorem ipsum dolor sit amet
+2.  Consectetur adipiscing elit
+3.  Integer molestie lorem at massa
+
+## Code
+
+Inline `code`
+
+Block code
+
+```
+npm install netlify-cli -g
+```
+
+Syntax highlighting
+
+```js
+var foo = function (bar) {
+  return bar++;
+};
+
+console.log(foo(5));
+```
+
+## Tables
+
+| Option | Description                                                               |
+| ------ | ------------------------------------------------------------------------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default.    |
+| ext    | extension to be used for dest files.                                      |
+
+Right aligned columns
+
+| Option |                                                               Description |
+| -----: | ------------------------------------------------------------------------: |
+|   data | path to data files to supply the data that will be passed into templates. |
+| engine |    engine to be used for processing templates. Handlebars is the default. |
+|    ext |                                      extension to be used for dest files. |
+
+## Links
+
+*   [Next.js on Netlify](https://docs.netlify.com/frameworks/next-js/overview/)
+*   [Use Visual Editor with Next.js](https://docs.netlify.com/visual-editor/frameworks/next/)
+
+## Image
+
+Recommended image orientation is horizontal. You can adjust the image component to your needs in `components/CustomImage.js`.
+
+![Image alt text](/images/random-image.jpeg "Image Title")
