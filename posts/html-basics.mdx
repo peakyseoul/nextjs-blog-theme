@@ -2,11 +2,11 @@
 type: Post
 title: Basics of HTML
 description: >-
-  What is an HTML and how is it made? What are the most important tags to know? How to style html pages.
+  Learn the basics of HTML and CSS to build the portfolio on codehs.com.
 date: '2024-12-22'
 ---
 
-# What is an HTML?
+# HTML Basics
 
 HTML stands for Hypertext Markup Langauge. 
 Hypertext - text displayed on a computer that has links to other hypertext documents.
@@ -39,21 +39,16 @@ HTML is made up of tags markup the text of a document in order to tell the brows
 The `<head>` tag contains information about your website or *metadata*. This where title, language or time-zone is indicated.
 The `<body>` tag contains everthing that will be displayed to the user.
 
-### Tags can go inside other tags
-### We use indenting to show the structure of the tags
-### The structure of an html document is a tree
-### Typically, tags come in pairs - openning and closing tags.
+* Tags can go inside other tags
+* We use indenting to show the structure of the tags
+* The structure of an html document is a tree
+* Typically, tags come in pairs - openning and closing tags.
 
 ***
 
 ## Basic Tags:
 
-`<h1>` - Heading one tag. typically used to indicate headings in the page.
-`<p>`  - Paragraph tag. These used to include a paragraph of a text. Note that there is an automatic line break (new line) after these tags.
-`<i>`  - Italized text. These make the text *cursive*.
-`<b>`  - These help to make the text **bold**.
-
-
+`<h1>` - Heading one tag. typically used to indicate headings in the page. \
 
 # h1 Heading
 
@@ -67,87 +62,151 @@ The `<body>` tag contains everthing that will be displayed to the user.
 
 ###### h6 Heading
 
-## Horizontal Rules
+
+`<p>`  - Paragraph tag. These used to include a paragraph of a text. Note that there is an automatic line break (new line) after these tags. \
+`<i>`  - Italized text. These make the text *cursive*. \
+`<b>`  - These help to make the text **bold**. \
+`<hr>` - Horizontal Rule. No closing tag. Creates a horizontal line on the screen. \
 
 ***
 
-## Emphasis
+`<br>` - Line Break. Creates a new line. \
 
-**This is bold text**
+## Horizontal Rules
+***
 
-**This is bold text**
+`<s>` - Strinkethrough tag. ~~This is what it looks like~~
 
-*This is italic text*
+## Some other examples of tags
 
-*This is italic text*
+```
+<p>
+    This is text that is <strong>important</strong>.
+    <br>
+    This is text that needs <em>emphasized</em>.
+    <br>
+    This is text that needs <mark>highlighted</mark>.
+</p>
 
-~~Strikethrough~~
+```
 
-## Blockquotes
+## Lists ordered vs unordered.
 
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
+Lists can be done in ordered and unordered fashion. Following are the examples:
 
-## Lists
+Ordered:
 
-Unordered
-
-*   Lorem ipsum dolor sit amet
-*   Consectetur adipiscing elit
-*   Integer molestie lorem at massa
-
-Ordered
-
-1.  Lorem ipsum dolor sit amet
+1.  Item 1
 2.  Consectetur adipiscing elit
 3.  Integer molestie lorem at massa
 
-## Code
-
-Inline `code`
-
-Block code
+```
+<ol>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ol>
 
 ```
-npm install netlify-cli -g
+
+Unordered:
+
+*   Item 1
+*   Item 2
+*   Item 3
+
 ```
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
 
-Syntax highlighting
-
-```js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
 ```
-
-## Tables
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
-Right aligned columns
-
-| Option |                                                               Description |
-| -----: | ------------------------------------------------------------------------: |
-|   data | path to data files to supply the data that will be passed into templates. |
-| engine |    engine to be used for processing templates. Handlebars is the default. |
-|    ext |                                      extension to be used for dest files. |
 
 ## Links
 
-*   [Next.js on Netlify](https://docs.netlify.com/frameworks/next-js/overview/)
-*   [Use Visual Editor with Next.js](https://docs.netlify.com/visual-editor/frameworks/next/)
+Linke can be done using `<a>` tag. \
+The following is an example of a link to google site.
 
-## Image
+```
+<a href="google.com">
+  Click here to go to Google
+</a>
+```
 
-Recommended image orientation is horizontal. You can adjust the image component to your needs in `components/CustomImage.js`.
+*   [Click here to go to Google](https://google.com)
+
+## HTML attributes
+
+```
+<tag attribute="value">Tag content here</tag>
+```
+
+
+Some of the tags will include html attributes. In the example above, "href" is the name of the attribute and "google.com" is the value of that attribute. \
+
+## images
+
+Image tag in HTML is `<img>` and it doesn't have a closing tag. \
+Image tag helps us insert images into our pages through "src" attribute.
+
+```
+<img src="/images/random-image.jpeg" alt="Image not found" width="50px" height="50px">
+  
+```
 
 ![Image alt text](/images/random-image.jpeg "Image Title")
+
+## Navigation Bar
+
+Having easy to use navigation bar is important for every website. \
+The following is an example of a navigation bar:
+
+```
+<nav>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="news.html">News</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="about.html">About</a></li>
+</nav>
+
+```
+
+# CSS basics
+
+## Adding External CSS
+Rather than putting all of our CSS rules in a style tag, it's also possible to add CSS code that's written in a separate file. The file should be a .css file, such as my_style.css \
+Example: \
+my_page.html \
+
+```
+<html>
+    <head>
+        <title>Your Page Title</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>CodeHS</h1>
+    </body>
+</html>
+
+```
+style.css
+```
+/* 
+* General format 
+*/
+
+selector {
+    property: value;
+    property: value;
+}
+
+h1 {
+    font-size: 30px;
+    color: 
+red;
+}
+
+```
