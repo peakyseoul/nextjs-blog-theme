@@ -66,11 +66,11 @@ The `<body>` tag contains everthing that will be displayed to the user.
 `<p>`  - Paragraph tag. These used to include a paragraph of a text. Note that there is an automatic line break (new line) after these tags. \
 `<i>`  - Italized text. These make the text *cursive*. \
 `<b>`  - These help to make the text **bold**. \
-`<hr>` - Horizontal Rule. No closing tag. Creates a horizontal line on the screen. \
+`<hr>` - Horizontal Rule. No closing tag. Creates a horizontal line on the screen. 
 
 ***
 
-`<br>` - Line Break. Creates a new line. \
+`<br>` - Line Break. Creates a new line. 
 
 ## Horizontal Rules
 ***
@@ -126,7 +126,7 @@ Unordered:
 
 ## Links
 
-Linke can be done using `<a>` tag. \
+Linke can be done using `<a>` tag. 
 The following is an example of a link to google site.
 
 ```
@@ -148,7 +148,7 @@ Some of the tags will include html attributes. In the example above, "href" is t
 
 ## images
 
-Image tag in HTML is `<img>` and it doesn't have a closing tag. \
+Image tag in HTML is `<img>` and it doesn't have a closing tag. 
 Image tag helps us insert images into our pages through "src" attribute.
 
 ```
@@ -160,7 +160,7 @@ Image tag helps us insert images into our pages through "src" attribute.
 
 ## Navigation Bar
 
-Having easy to use navigation bar is important for every website. \
+Having easy to use navigation bar is important for every website. 
 The following is an example of a navigation bar:
 
 ```
@@ -178,7 +178,7 @@ The following is an example of a navigation bar:
 ## Adding External CSS
 Rather than putting all of our CSS rules in a style tag, it's also possible to add CSS code that's written in a separate file. The file should be a .css file, such as my_style.css \
 Example: \
-my_page.html \
+my_page.html 
 
 ```
 <html>
@@ -205,8 +205,127 @@ selector {
 
 h1 {
     font-size: 30px;
+    color: red;
+}
+
+```
+
+## CSS selector by tags.
+Styling HTML can be by tags. The following code selects all h1 tags and styles the font-size to be at 30px and color at red.
+
+```
+h1 {
+    font-size: 30px;
+    color: red;
+}
+```
+
+## CSS selector by class.
+
+Class is an attribute that we can add to html tags to style a group of elements. If we use a class as a selector, it selects all the elements that share that class. \
+The class style overrides tag style in case of a conflict. In other words, if a select-by-tag rule says that the element should be red, and a select-by-class rule says the same element should be green, the class rule takes precedence and the element will be green. \
+You can add a class to a tag like this:
+
+```
+<tag class="class-name"></tag>
+```
+
+You can add multiple classes to a tag by separating class names with spaces:
+
+```
+<tag class="class1 class2 class3"></tag>
+```
+
+Class names:
+* Cannot start with a number
+* Should be all lowercase
+* Should use dashes (-) between words i.e. "class-name"
+* Should be descriptive
+
+```
+/*
+* This rule will apply to only <h1> elements
+* with the class "alert"
+*/
+
+h1.alert {
+font-size: 20px;
+}
+```
+
+## CSS selector by class.
+
+id is an attribute that we can add to an HTML tag to style that specific element. \
+An element can only have one id and the id of an element should be unique. \
+There should be only one tag with a given id on any web page. \
+Using the ID as a selector will select the one element that has that ID. \
+
+```
+<tag id="id-name"></tag>
+```
+
+css:
+
+```
+#logo {
+    font-size: 20px;
+    color: red;
+}
+```
+
+## Divs
+
+Divs are used to group together several different HTML elements into one block. \
+A div creates a new block of elements, a block always starts on a new line and takes up the full width available in its container. \
+Grouping elements together in a div allows us to style that block as one unit. \
+HTML:
+```
+<div id="block-one">
+    <h3>Welcome</h3>
+    <p>Welcome to my web page.</p>
+</div>
+<div id="block-two">
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+    </ul>
+</div>
+```
+
+CSS:
+
+```
+#block-one {
     color: 
 red;
 }
 
+#block-two {
+    color: 
+blue;
+}
+```
+
+## Spans
+
+Spans are used to group together smaller chunks of HTML code in-line. \
+Spans do not create a new block, they are usually used to add style to a small chunk of HTML inside of a line (such as a line in a paragraph). \
+Example HTML:
+
+HTML:
+
+```
+<p>This is a <span class="big">paragraph</span> of <span class="small">text</span></p>
+```
+
+CSS:
+
+```
+.big {
+    font-size: 20px;
+}
+
+.small {
+    font-size: 8px;
+}
 ```
