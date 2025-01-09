@@ -97,8 +97,8 @@ Lists can be done in ordered and unordered fashion. Following are the examples:
 Ordered:
 
 1.  Item 1
-2.  Consectetur adipiscing elit
-3.  Integer molestie lorem at massa
+2.  Item 2
+3.  Item 3
 
 ```
 <ol>
@@ -175,6 +175,10 @@ The following is an example of a navigation bar:
 
 # CSS basics
 
+Why Use CSS? \
+
+CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.
+
 ## Adding External CSS
 Rather than putting all of our CSS rules in a style tag, it's also possible to add CSS code that's written in a separate file. The file should be a .css file, such as my_style.css \
 Example: \
@@ -206,9 +210,13 @@ selector {
 h1 {
     font-size: 30px;
     color: red;
+    text-align: center;
 }
 
 ```
+* h1 is a selector in CSS (it points to the HTML element you want to style: <p>).
+* color is a property, and red is the property value
+* text-align is a property, and center is the property value
 
 ## CSS selector by tags.
 Styling HTML can be by tags. The following code selects all h1 tags and styles the font-size to be at 30px and color at red.
@@ -220,8 +228,42 @@ h1 {
 }
 ```
 
-## CSS selector by class.
+## CSS Selectors
 
+CSS selectors are used to "find" (or select) the HTML elements you want to style. \
+We can divide CSS selectors into five categories:
+
+* Simple selectors (select elements based on name, id, class)
+* Combinator selectors (select elements based on a specific relationship between them)
+* Pseudo-class selectors (select elements based on a certain state)
+* Pseudo-elements selectors (select and style a part of an element)
+* Attribute selectors (select elements based on an attribute or attribute value)
+
+### The CSS element Selector
+
+Here, all <p> elements on the page will be center-aligned, with a red text color:
+```
+p {
+  text-align: center;
+  color: red;
+}
+```
+
+### The CSS id Selector
+
+* The id selector uses the id attribute of an HTML element to select a specific element.
+* The id of an element is unique within a page, so the id selector is used to select one unique element!
+* To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+The CSS rule below will be applied to the HTML element with id="para1": 
+```
+#para1 {
+  text-align: center;
+  color: red;
+}
+```
+
+### The CSS class Selector
 Class is an attribute that we can add to html tags to style a group of elements. If we use a class as a selector, it selects all the elements that share that class. \
 The class style overrides tag style in case of a conflict. In other words, if a select-by-tag rule says that the element should be red, and a select-by-class rule says the same element should be green, the class rule takes precedence and the element will be green. \
 You can add a class to a tag like this:
@@ -253,25 +295,46 @@ font-size: 20px;
 }
 ```
 
-## CSS selector by class.
+## CSS Universal Selector
 
-id is an attribute that we can add to an HTML tag to style that specific element. \
-An element can only have one id and the id of an element should be unique. \
-There should be only one tag with a given id on any web page. \
-Using the ID as a selector will select the one element that has that ID. \
+The universal selector (*) selects all HTML elements on the page. \
+The CSS rule below will affect every HTML element on the page:
 
 ```
-<tag id="id-name"></tag>
-```
-
-css:
-
-```
-#logo {
-    font-size: 20px;
-    color: red;
+* {
+  text-align: center;
+  color: blue;
 }
 ```
+
+## The CSS Grouping Selector
+
+The grouping selector selects all the HTML elements with the same style definitions. \
+To group selectors, separate each selector with a comma.
+
+```
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+```
+
+## CSS Comments
+
+Comments are used to explain the code, and may help when you edit the source code at a later date. \
+Comments are ignored by browsers. \
+A CSS comment is placed inside the <style> element, and starts with /* and ends with */
+
+```
+/* This is a single-line comment */
+p {
+  color: red;
+}
+```
+
+CSS Colors.
+
+*   [CSS colors in full detail](https://www.w3schools.com/css/css_colors.asp)
 
 ## Divs
 
@@ -296,13 +359,11 @@ CSS:
 
 ```
 #block-one {
-    color: 
-red;
+    color: red;
 }
 
 #block-two {
-    color: 
-blue;
+    color: blue;
 }
 ```
 
@@ -327,5 +388,50 @@ CSS:
 
 .small {
     font-size: 8px;
+}
+```
+
+## CSS background-color
+
+The background-color property specifies the background color of an element.
+```
+body {
+  background-color: lightblue;
+  opacity: 0.3;
+}
+```
+Transparancy using RGBA
+```
+div {
+  background: rgba(0, 128, 0, 0.3) /* Green background with 30% opacity */
+}
+```
+CSS Background Image:
+
+```
+body {
+  background-image: url("paper.gif");
+}
+```
+
+The background image can also be set for specific elements, like the <p> element:
+
+```
+p {
+  background-image: url("paper.gif");
+}
+```
+
+* background-repeat: no-repeat, repeat-x, repeat-y
+* background-position: right top, left top, etc.
+
+The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page):
+* background-attachment: scroll, fixed.
+
+You can use the shorthand property background:
+
+```
+body {
+  background: #ffffff url("img_tree.png") no-repeat right top;
 }
 ```
