@@ -1,0 +1,139 @@
+---
+type: Post
+title: Introduction to Javascript in HTML
+description: "How Javascript is used in HTML"
+date: '2025-11-05'
+---
+
+## Javascript Basics
+
+### Creating variables in Javascript:
+
+In a programming language, variables are used to store data values.
+JavaScript uses the keywords var, let and const to declare variables.
+An equal sign is used to assign values to variables.
+
+Following are some of the examples of Javscript:
+
+```
+// How to create variables:
+var x;
+let y;
+
+// How to use variables:
+x = 5;
+y = 6;
+let z = x + y;
+```
+
+When to Use var, let, or const?
+1. Always declare variables
+2. Always use const if the value should not be changed
+3. Always use const if the type should not be changed (Arrays and Objects)
+4. Only use let if you can't use const
+5. Only use var if you MUST support old browsers.
+
+Example of the variable use:
+
+```
+<p id="demo"></p>
+
+<script>
+let carName = "Volvo";
+document.getElementById("demo").innerHTML = carName;
+</script>
+```
+
+Variables defined with let can not be redeclared.
+
+```
+let x = "John Doe";
+
+let x = 0;
+```
+
+Variables defined with var can be redeclared.
+
+```
+var x = "John Doe";
+
+var x = 0;
+```
+
+### Variable types:
+
+```
+let x = 16 + 4 + "Volvo";
+
+// Result is 20Volvo
+
+let x = "Volvo" + 16 + 4;
+
+// Result is Volvo164
+```
+
+
+### Comments:
+
+Single line comments start with //.
+
+Multi-line comments start with /* and end with */.
+
+### 
+
+
+console.log - prints values to the console. Access it by going to the browser development tools.
+
+```
+var x = 5;
+console.log(x);
+```
+
+### User Input
+
+prompt() is a function that allows users to enter input.
+
+```
+var name = prompt("What is your name?");
+console.log(name);
+```
+
+### alert
+
+alert() provides a pop-up to users.
+
+```
+alert("This will allow for a pop-up at the top of the browser");
+```
+
+### DOM Functions
+
+The Document Object Model (DOM) makes HTML elements mutable using other programming languages.
+
+Here are some useful functions to access HTML elements:
+
+```
+// Select an element by id tag
+document.getElementById("name-of-id");
+
+// Can be set to variable
+var el = document.getElementById("name-of-id");
+
+// Select element by Tag
+// creates a list of all the elements with that tag
+var list = document.getElementsByTagName("p");
+
+// Access elements from a list
+// Access the 2nd index of a list
+var individualElement = list[2];
+
+// Access the children of an element
+body.firstElementChild;  // returns the first child element of body
+body.lastElementChild;   // returns the last child element of body
+
+// Access a list of children
+body.children;       // returns a list of children
+
+// Access parent of an element
+el.parentElement;    // returns the parent element of el
+```
